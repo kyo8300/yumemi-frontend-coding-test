@@ -1,5 +1,10 @@
 import React from "react";
+import "./Header.css";
 
 export const Header = () => {
-  return <div>Header</div>;
+  return (
+    <header className="title-background">
+      <h2>Title</h2>
+    </header>
+  );
 };
