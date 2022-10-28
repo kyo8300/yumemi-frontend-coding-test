@@ -1,4 +1,4 @@
-import { fetchAPI } from "@/utils/fetchApi";
+import { fetchAPI } from "@/utils/fetchAPI";
 import { useQuery } from "@tanstack/react-query";
 import { Prefectures } from "../types";
 
