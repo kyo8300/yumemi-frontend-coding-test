@@ -1,14 +1,17 @@
-export const getPrefectures = async () => {
-  const response = await fetch(
-    `${import.meta.env.VITE_API_ENDPOINT}/api/v1/prefectures`,
-    {
-      headers: {
-        "X-API-KEY": import.meta.env.VITE_API_KEY,
-      },
-    },
-  );
+import { fetchAPI } from "@/utils/fetchApi";
+import { useQuery } from "@tanstack/react-query";
+import { Prefectures } from "../types";
 
-  const data = await response.json();
+type ResponseData = {
+  message: null;
+  result: readonly Prefectures[];
+};
 
-  console.log(data);
+async function getPrefectures(): Promise<ResponseData> {
+  const res = await fetchAPI({ pathname: "prefectures" });
+  return res.json();
+}
+
+export const usePrefectures = () => {
+  return useQuery(["prefectures"], getPrefectures);
 };
