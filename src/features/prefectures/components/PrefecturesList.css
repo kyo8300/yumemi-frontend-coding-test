@@ -1,0 +1,14 @@
+.prefectures-section {
+  padding: 15px;
+}
+
+.prefectures-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.prefecture-checkbox-wrapper {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
