@@ -1,0 +1,4 @@
+.prefectures-checkbox:hover {
+  cursor: pointer;
+  background-color: rgba(100, 100, 100, 0.1);
+}

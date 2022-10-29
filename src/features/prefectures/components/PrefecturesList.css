@@ -9,6 +9,6 @@
 
 .prefecture-checkbox-wrapper {
   display: grid;
-  gap: 10px;
+  gap: 5px;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
