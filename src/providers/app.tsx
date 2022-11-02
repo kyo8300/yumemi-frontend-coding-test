@@ -5,7 +5,15 @@ type Props = {
   children?: React.ReactNode;
 };
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      cacheTime: Infinity,
+      staleTime: Infinity,
+    },
+  },
+});
 
 export const AppProvider: React.FC<Props> = ({ children }) => {
   return (
