@@ -13,5 +13,5 @@ async function getPrefectures(): Promise<ResponseData> {
 }
 
 export const usePrefectures = () => {
-  return useQuery(["prefectures"], getPrefectures);
+  return useQuery(["prefectures"], getPrefectures, { suspense: true });
 };
