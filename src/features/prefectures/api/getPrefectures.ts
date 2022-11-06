@@ -1,4 +1,3 @@
-import { fetchAPI } from "@/utils/fetchAPI";
 import { useQuery } from "@tanstack/react-query";
 import { Prefectures } from "../types";
 
@@ -8,7 +7,7 @@ type ResponseData = {
 };
 
 async function getPrefectures(): Promise<ResponseData> {
-  const res = await fetchAPI({ pathname: "prefectures" });
+  const res = await fetch("/.netlify/functions/fetch-prefectures");
   return res.json();
 }
 

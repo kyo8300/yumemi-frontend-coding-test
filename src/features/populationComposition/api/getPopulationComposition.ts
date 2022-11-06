@@ -1,4 +1,3 @@
-import { fetchAPI } from "@/utils/fetchAPI";
 import { useQueries } from "@tanstack/react-query";
 import { PopulationComposition } from "../types";
 
@@ -26,9 +25,10 @@ type PrefCodes = {
 async function getPopulationComposition({
   prefCode,
 }: PrefCode): Promise<ResponseData> {
-  const res = await fetchAPI({
-    pathname: `population/composition/perYear?cityCode=-&prefCode=${prefCode}`,
-  });
+  const res = await fetch(
+    `/.netlify/functions/fetch-population-composition?prefCode=${prefCode}`,
+  );
+
   const data: FetchedData = await res.json();
   return {
     data: data.result.data[0].data,
